@@ -1,13 +1,11 @@
 package com.bolo101.dermavision.ml
 
-// Contient le résultat brut de l'inférence
 data class ClassificationResult(
-    val score: Float,        // probabilité brute [0.0 → 1.0]
-    val isSuspect: Boolean   // true si score >= THRESHOLD
+    val genusLabel: String,       // "Cantharellus" (nom scientifique)
+    val frenchName: String,       // "Girolle / Chanterelle"
+    val isEdible: Boolean,        // true = potentiellement comestible
+    val edibilityLabel: String,   // "Comestible", "Toxique", "Non recommandé"
+    val confidence: Float         // score de confiance [0,1]
 ) {
-    // Pourcentage affiché à l'utilisateur
-    val confidencePercent: Int get() = (score * 100).toInt()
-
-    // Libellé lisible
-    val label: String get() = if (isSuspect) "Suspect" else "Bénin"
+    val confidencePercent: Int get() = (confidence * 100).toInt()
 }
