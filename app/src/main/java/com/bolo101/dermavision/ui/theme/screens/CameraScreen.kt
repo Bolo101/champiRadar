@@ -73,7 +73,7 @@ fun CameraScreen(
     Column(modifier = Modifier.fillMaxSize()) {
 
         TopAppBar(
-            title = { Text("Photographier") },
+            title = { Text("Photographier le champignon") },
             navigationIcon = {
                 IconButton(onClick = onBack) {
                     Icon(imageVector = Icons.Filled.ArrowBack, contentDescription = "Retour")

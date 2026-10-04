@@ -21,27 +21,21 @@ fun HomeScreen(onStartAnalysis: () -> Unit) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.SpaceBetween
     ) {
-
-        // ── Bloc haut ──────────────────────────────────────────
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Spacer(modifier = Modifier.height(56.dp))
-
             Text(
-                text = "DermaVision",
+                text = "MycoVision",
                 fontSize = 36.sp,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.primary
             )
-
             Text(
-                text = "Analyse locale de grains de beauté",
+                text = "Identification de champignons européens",
                 fontSize = 15.sp,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 textAlign = TextAlign.Center
             )
-
             Spacer(modifier = Modifier.height(40.dp))
-
             Card(
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(20.dp),
@@ -58,33 +52,27 @@ fun HomeScreen(onStartAnalysis: () -> Unit) {
                         fontWeight = FontWeight.SemiBold,
                         fontSize = 16.sp
                     )
-                    InfoStep(number = "1", text = "Photographiez votre grain de beauté")
-                    InfoStep(number = "2", text = "L'IA analyse l'image sur votre téléphone")
+                    InfoStep(number = "1", text = "Photographiez le champignon entier")
+                    InfoStep(number = "2", text = "L'IA identifie le genre sur votre téléphone")
                     InfoStep(number = "3", text = "Résultat instantané, sans connexion internet")
                 }
             }
         }
-
-        // ── Bloc bas ───────────────────────────────────────────
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier.padding(bottom = 32.dp)
         ) {
             Button(
                 onClick = onStartAnalysis,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(56.dp),
+                modifier = Modifier.fillMaxWidth().height(56.dp),
                 shape = RoundedCornerShape(16.dp)
             ) {
-                Text(text = "Commencer l'analyse", fontSize = 16.sp)
+                Text(text = "Identifier un champignon", fontSize = 16.sp)
             }
-
             Spacer(modifier = Modifier.height(16.dp))
-
             Text(
-                text = "Cet outil ne remplace pas un avis médical. " +
-                        "Consultez un dermatologue pour tout diagnostic.",
+                text = "Cet outil ne remplace jamais l'avis d'un mycologue expert. " +
+                       "Ne consommez jamais un champignon sans confirmation d'un spécialiste.",
                 fontSize = 12.sp,
                 color = MaterialTheme.colorScheme.error,
                 textAlign = TextAlign.Center
@@ -93,7 +81,6 @@ fun HomeScreen(onStartAnalysis: () -> Unit) {
     }
 }
 
-// ── Composant réutilisable : une ligne numérotée ───────────────
 @Composable
 fun InfoStep(number: String, text: String) {
     Row(
@@ -105,10 +92,7 @@ fun InfoStep(number: String, text: String) {
             color = MaterialTheme.colorScheme.primary,
             modifier = Modifier.size(28.dp)
         ) {
-            Box(
-                contentAlignment = Alignment.Center,
-                modifier = Modifier.fillMaxSize()
-            ) {
+            Box(contentAlignment = Alignment.Center, modifier = Modifier.fillMaxSize()) {
                 Text(
                     text = number,
                     color = MaterialTheme.colorScheme.onPrimary,
