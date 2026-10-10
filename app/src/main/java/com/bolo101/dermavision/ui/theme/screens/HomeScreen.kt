@@ -24,7 +24,7 @@ fun HomeScreen(onStartAnalysis: () -> Unit) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Spacer(modifier = Modifier.height(56.dp))
             Text(
-                text = "MycoVision",
+                text = "champiRadar",
                 fontSize = 36.sp,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.primary
